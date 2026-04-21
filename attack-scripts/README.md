@@ -33,3 +33,14 @@ Run them again after every change.
 
 Security is not a feature.
 It is a habit.
+
+---
+
+## Real World Truth (Put This Somewhere)
+Most APIs are not broken by genius hackers. They are broken by:
+- repeated requests
+- bad tokens
+- unexpected input
+- simple persistence
+
+Nothing fancy.
