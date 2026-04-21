@@ -36,7 +36,7 @@ It is a habit.
 
 ---
 
-## Real World Truth (Put This Somewhere)
+## Real World Truth
 Most APIs are not broken by genius hackers. They are broken by:
 - repeated requests
 - bad tokens
