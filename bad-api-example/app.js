@@ -1,3 +1,11 @@
+// What is wrong here
+// No authentication
+// No authorization
+// No input validation
+// No rate limiting
+// Blind trust everywhere
+// This is how most “internal APIs” look.
+
 const express = require("express");
 const app = express();
 
