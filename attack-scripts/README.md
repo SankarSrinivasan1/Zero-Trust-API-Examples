@@ -1,5 +1,7 @@
 # Attack Scripts
 
+### These scripts are for learning and testing your own systems. Do not run against systems you do not own or have permission to test. If you do, the problem is not the script.
+
 These are simple scripts to break your own API.
 
 If they succeed, your API is not secure.
