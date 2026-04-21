@@ -43,3 +43,13 @@ That is how you learn security.
 Do not use the bad examples in production.
 
 Seriously.
+
+---
+
+Most developers do not get hacked because attackers are genius.
+
+They get hacked because:
+they trusted internal APIs
+they skipped validation
+they assumed no one would try
+Do not be that developer.
