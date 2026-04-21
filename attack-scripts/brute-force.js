@@ -1,3 +1,9 @@
+// What this shows
+// No rate limiting = unlimited attempts
+// Logs get flooded
+// System gets stressed
+// Most APIs fail here quietly.
+
 const axios = require("axios");
 
 const URL = "http://localhost:3000/admin";
