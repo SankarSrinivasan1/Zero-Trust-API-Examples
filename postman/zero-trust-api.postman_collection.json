@@ -1,0 +1,110 @@
+{
+  "info": {
+    "name": "Zero Trust API Testing",
+    "_postman_id": "zero-trust-collection",
+    "description": "Collection to test insecure vs secure APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Public Endpoint",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/public"
+      }
+    },
+    {
+      "name": "Admin Access - No Token",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/admin"
+      }
+    },
+    {
+      "name": "Admin Access - Invalid Token",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer invalid-token"
+          }
+        ],
+        "url": "{{base_url}}/admin"
+      }
+    },
+    {
+      "name": "Admin Access - Valid Token",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/admin"
+      }
+    },
+    {
+      "name": "Transfer - No Validation",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/transfer",
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"amount\": -100 }"
+        }
+      }
+    },
+    {
+      "name": "Transfer - Script Injection",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/transfer",
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"amount\": \"<script>alert(1)</script>\" }"
+        }
+      }
+    },
+    {
+      "name": "Transfer - Large Payload",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/transfer",
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"amount\": 999999999999999999999 }"
+        }
+      }
+    },
+    {
+      "name": "Rate Limit Test (Run Multiple Times)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/transfer",
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"amount\": 10 }"
+        }
+      }
+    }
+  ]
+}
