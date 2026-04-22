@@ -1,0 +1,56 @@
+info:
+  name: Zero Trust API Testing
+  id: zero-trust-collection
+  description: Collection to test insecure vs secure APIs
+
+variables:
+  base_url: http://localhost:3000
+  token: ""
+
+requests:
+
+  - name: Public Endpoint
+    method: GET
+    url: {{base_url}}/public
+
+  - name: Admin Access - No Token
+    method: GET
+    url: {{base_url}}/admin
+
+  - name: Admin Access - Invalid Token
+    method: GET
+    url: {{base_url}}/admin
+    headers:
+      Authorization: Bearer invalid-token
+
+  - name: Admin Access - Valid Token
+    method: GET
+    url: {{base_url}}/admin
+    headers:
+      Authorization: Bearer {{token}}
+
+  - name: Transfer - No Validation
+    method: POST
+    url: {{base_url}}/transfer
+    body:
+      amount: -100
+
+  - name: Transfer - Script Injection
+    method: POST
+    url: {{base_url}}/transfer
+    body:
+      amount: <script>alert(1)</script>
+
+  - name: Transfer - Large Payload
+    method: POST
+    url: {{base_url}}/transfer
+    body:
+      amount: 999999999999999999999
+
+  - name: Rate Limit Test
+    method: POST
+    url: {{base_url}}/transfer
+    headers:
+      Authorization: Bearer {{token}}
+    body:
+      amount: 10
