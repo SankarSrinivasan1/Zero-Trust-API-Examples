@@ -1,7 +1,8 @@
+# GitHub companion repository for book titled:
+![Zero Trust APIs](https://github.com/SankarSrinivasan1/Zero-Trust-API-Examples/blob/main/images/zero%20api%20front.jpg)
+
 # Zero-Trust-API-Examples
 Practical Zero Trust API examples for real-world developers. Explore insecure vs secure implementations, JWT mistakes, and rate limiting strategies. Learn by breaking bad APIs and fixing them using authentication, validation, and least privilege principles. Built for hands-on security learning, not theory.
-
-# Zero Trust API Examples
 
 This repo is not here to impress you.
 
