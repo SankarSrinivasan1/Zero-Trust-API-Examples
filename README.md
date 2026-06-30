@@ -1,7 +1,7 @@
 # GitHub companion repository for book titled:
 ![Zero Trust APIs](https://github.com/SankarSrinivasan1/Zero-Trust-API-Examples/blob/main/images/zero%20api%20front.jpg)
 
-# Buy the book at Amazon and leading online bookstores
+## Buy the book at Amazon and leading online bookstores
 ![Zero Trust APIs](https://www.amazon.com/Zero-Trust-APIs-Service-Service-ebook/dp/B0GY3RC564/)
 
 # Zero-Trust-API-Examples
